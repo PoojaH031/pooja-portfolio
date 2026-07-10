@@ -1,0 +1,144 @@
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certs">
+  <div class="certs-inner">
+    <div class="section-label">05 — Credentials</div>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid reveal">
+      <div class="cert-card">
+        <span class="cert-icon">🎓</span>
+        <div class="cert-title">Python & Machine Learning</div>
+        <div class="cert-org">Coursera</div>
+        <div class="cert-desc">Comprehensive ML specialization covering supervised/unsupervised learning.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">06 — Let's Connect</div>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="social-links">
+      <a href="mailto:pooja@example.com" class="social-btn social-email">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Crafted with love and powered by AI | © 2026 Pooja H</p>
+</footer>
+
+<script>
+// CUSTOM CURSOR
+const cursor = document.getElementById('cursor');
+const cursorRing = document.getElementById('cursor-ring');
+
+document.addEventListener('mousemove', (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
+  cursorRing.style.left = x + 'px';
+  cursorRing.style.top = y + 'px';
+});
+
+// STAR CANVAS
+const canvas = document.getElementById('star-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+for (let i = 0; i < 100; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    opacity: Math.random() * 0.5 + 0.5
+  });
+}
+
+function animateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(star => {
+    ctx.fillStyle = 'rgba(0, 229, 255, ' + star.opacity + ')';
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  requestAnimationFrame(animateStars);
+}
+animateStars();
+
+// TYPING EFFECT
+const typedText = document.getElementById('typed-text');
+const roles = ['AI Enthusiast', 'ML Engineer', 'Data Scientist', 'Code Creator'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+  const currentRole = roles[roleIndex];
+  if (isDeleting) {
+    typedText.textContent = currentRole.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typedText.textContent = currentRole.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let speed = isDeleting ? 50 : 100;
+  if (!isDeleting && charIndex === currentRole.length) {
+    speed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    roleIndex = (roleIndex + 1) % roles.length;
+    isDeleting = false;
+    speed = 500;
+  }
+  setTimeout(typeEffect, speed);
+}
+typeEffect();
+
+// SCROLL REVEAL
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+revealElements.forEach(element => {
+  observer.observe(element);
+});
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

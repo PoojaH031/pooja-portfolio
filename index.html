@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pooja H — AI/ML Engineer</title>
+<meta name="description" content="Portfolio of Pooja H — AI, Machine Learning, Computer Vision & Flutter developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<style>
+  :root{
+    --bg: #0F0A1E;
+    --bg-alt: #150F28;
+    --surface: #1D1638;
+    --surface-line: #2E2555;
+    --venom: #39FF88;
+    --magenta: #FF3D81;
+    --gold: #FFD23F;
+    --ink: #F5F0FF;
+    --ink-dim: #B8AED6;
+    --ink-faint: #7A6FA0;
+    --radius: 14px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  ::selection{ background:var(--venom); color:#0F0A1E; }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--venom);
+    display:flex;
+    align-items:center;
+    gap:.6em;
+  }
+  .eyebrow::before{
+    content:'';
+    width:22px; height:1px;
+    background:var(--venom);
+    display:inline-block;
+  }
+
+  h1,h2,h3{ font-family:'Bungee', cursive; font-weight:400; line-height:1.15; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  section{ padding:110px 8vw; position:relative; }
+  @media (max-width:720px){ section{ padding:70px 6vw; } }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 8vw;
+    background:linear-gradient(to bottom, rgba(15,10,30,.92), rgba(15,10,30,0));
+    backdrop-filter:blur(6px);
+  }
+  .logo{
+    font-family:'Bungee', cursive;
+    font-size:1.1rem;
+    color:var(--ink);
+  }
+  .logo span{ color:var(--venom); }
+  .nav-links{
+    display:flex; gap:2.2rem;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.06em;
+  }
+  .nav-links a{ color:var(--ink-dim); transition:color .25s; position:relative; }
+  .nav-links a:hover{ color:var(--venom); }
+  .nav-links a:focus-visible{ outline:2px solid var(--venom); outline-offset:4px; }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh;
+    display:grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items:center;
+    gap:4vw;
+    padding-top:140px;
+  }
+  @media (max-width:900px){
+    .hero{ grid-template-columns:1fr; padding-top:120px; }
+  }
+
+  .hero-copy h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.4rem);
+    color:var(--ink);
+    margin:.4em 0 .3em;
+  }
+  .hero-copy h1 .accent{ color:var(--venom); }
+  .hero-copy p{
+    max-width:46ch;
+    color:var(--ink-dim);
+    font-size:1.05rem;
+  }
+  .hero-tags{
+    display:flex; flex-wrap:wrap; gap:.6rem;
+    margin-top:1.6rem;
+  }
+  .hero-tags span{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    padding:.4em .8em;
+    border:1px solid var(--surface-line);
+    border-radius:999px;
+    color:var(--ink-dim);
+  }
+  .hero-cta{ margin-top:2.2rem; display:flex; gap:1rem; flex-wrap:wrap; }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.8rem;
+    padding:.9em 1.6em;
+    border-radius:999px;
+    border:1px solid var(--venom);
+    color:var(--venom);
+    transition:all .25s ease;
+    display:inline-block;
+  }
+  .btn:hover{ background:var(--venom); color:#0F0A1E; box-shadow:0 0 24px rgba(57,255,136,.35); }
+  .btn.solid{ background:var(--magenta); border-color:var(--magenta); color:#0F0A1E; }
+  .btn.solid:hover{ box-shadow:0 0 24px rgba(255,61,129,.45); filter:brightness(1.08); }
+
+  /* ---------- SCALE PORTRAIT (signature element) ---------- */
+  .scale-wrap{
+    position:relative;
+    aspect-ratio: 3/4;
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow: 0 0 0 1px var(--surface-line), 0 30px 80px -20px rgba(57,255,136,.25);
+  }
+  .scale-base{
+    position:absolute; inset:0;
+    background-image:url('assets/anime.jpg');
+    background-size:cover;
+    background-position:center;
+  }
+  .tile-grid{
+    position:absolute; inset:0;
+    display:grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  .tile{
+    position:relative;
+    background-image:
+      radial-gradient(circle at 40% 30%, rgba(57,255,136,.5), transparent 60%),
+      linear-gradient(200deg, #123322, #0c1f2e 60%, #1a0f2e);
+    background-size: 1400% 1000%;
+    will-change: transform, opacity;
+    transition: transform .5s cubic-bezier(.16,1,.3,1), opacity .5s ease;
+    outline: .5px solid rgba(255,255,255,.03);
+  }
+  .scale-caption{
+    position:absolute; bottom:10px; left:10px; right:10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.62rem; letter-spacing:.08em;
+    color:rgba(245,240,255,.5);
+    pointer-events:none;
+    text-align:center;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .tile{ transition:none; }
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: .5fr 1fr;
+    gap:4vw;
+  }
+  @media (max-width:800px){ .about-grid{ grid-template-columns:1fr; gap:2rem; } }
+  .about-grid h2{ font-size:clamp(1.6rem,3vw,2.2rem); }
+  .about-grid p{ color:var(--ink-dim); max-width:60ch; }
+  .stat-row{
+    display:flex; gap:2.4rem; margin-top:2rem; flex-wrap:wrap;
+  }
+  .stat b{ font-family:'Bungee'; font-size:1.6rem; color:var(--gold); display:block; }
+  .stat span{ font-family:'JetBrains Mono'; font-size:.68rem; color:var(--ink-faint); letter-spacing:.06em; }
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-top:2.4rem; }
+  @media (max-width:800px){ .skill-groups{ grid-template-columns:1fr; } }
+  .skill-card{
+    background:var(--surface);
+    border:1px solid var(--surface-line);
+    border-radius:var(--radius);
+    padding:1.6rem;
+  }
+  .skill-card h3{ font-size:.95rem; font-family:'JetBrains Mono'; letter-spacing:.05em; color:var(--magenta); margin-bottom:1rem; text-transform:uppercase; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:.5rem; }
+  .pill-row span{
+    font-size:.78rem;
+    padding:.4em .85em;
+    border-radius:999px;
+    background:var(--bg-alt);
+    border:1px solid var(--surface-line);
+    color:var(--ink-dim);
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-card{
+    border-left:2px solid var(--venom);
+    padding-left:2rem;
+    margin-top:2.4rem;
+    max-width:70ch;
+  }
+  .exp-card .role{ font-size:1.2rem; font-family:'Bungee'; color:var(--ink); margin-bottom:.3em; }
+  .exp-card .org{ color:var(--gold); font-family:'JetBrains Mono'; font-size:.82rem; }
+  .exp-card .dates{ color:var(--ink-faint); font-family:'JetBrains Mono'; font-size:.72rem; margin:.4em 0 1em; }
+  .exp-card p{ color:var(--ink-dim); }
+
+  /* ---------- PROJECTS ---------- */
+  .project-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-top:2.4rem; }
+  @media (max-width:900px){ .project-grid{ grid-template-columns:1fr; } }
+  .project-card{
+    background:var(--surface);
+    border:1px solid var(--surface-line);
+    border-radius:var(--radius);
+    padding:1.8rem;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .project-card:hover{ transform:translateY(-6px); border-color:var(--venom); }
+  .project-card h3{ font-size:1.05rem; margin-bottom:.6em; color:var(--ink); }
+  .project-card p{ color:var(--ink-dim); font-size:.92rem; }
+  .project-card .tags{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+  .project-card .tags span{
+    font-family:'JetBrains Mono'; font-size:.65rem;
+    color:var(--venom); border:1px solid rgba(57,255,136,.35);
+    padding:.25em .6em; border-radius:999px;
+  }
+
+  /* ---------- CERTS ---------- */
+  .cert-list{ margin-top:2rem; display:flex; flex-wrap:wrap; gap:.8rem; }
+  .cert-list span{
+    font-family:'JetBrains Mono'; font-size:.8rem;
+    padding:.7em 1.1em; border-radius:8px;
+    background:var(--bg-alt); border:1px solid var(--surface-line);
+    color:var(--ink-dim);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-wrap{ text-align:center; }
+  .contact-wrap h2{ font-size:clamp(1.8rem,4vw,3rem); }
+  .contact-links{
+    display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; margin-top:2rem;
+  }
+  footer{
+    text-align:center; padding:2.4rem; color:var(--ink-faint);
+    font-family:'JetBrains Mono'; font-size:.7rem;
+    border-top:1px solid var(--surface-line);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">POOJA <span>H.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">CSE Graduate '26 · AI/ML</div>
+    <h1>Building things<br>that <span class="accent">see</span>, <span class="accent">read</span><br>& <span class="accent">respond</span>.</h1>
+    <p>I'm Pooja — I design AI-assisted systems across computer vision, generative AI, and mobile apps, from an assistive navigation aid for the visually impaired to bilingual agriculture chatbots.</p>
+    <div class="hero-tags">
+      <span>Computer Vision</span>
+      <span>Generative AI</span>
+      <span>Flutter</span>
+      <span>FastAPI</span>
+      <span>OCR</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn solid" href="#projects">See Projects</a>
+      <a class="btn" href="#contact">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="scale-wrap" id="scaleWrap">
+    <div class="scale-base"></div>
+    <div class="tile-grid" id="tileGrid"></div>
+    <div class="scale-caption">move your cursor across the frame</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="eyebrow">About</div>
+    <div>
+      <h2>Where CS meets curiosity for assistive tech.</h2>
+      <p>I'm a Computer Science &amp; Engineering graduate (KVG College of Engineering, 2026), focused on artificial intelligence, machine learning, computer vision, and cross-platform app development. My work leans toward AI systems that help people directly — assistive navigation, health screening, and agricultural support — paired with clean Flutter frontends and FastAPI backends.</p>
+      <div class="stat-row">
+        <div class="stat"><b>8.22</b><span>CGPA / 10</span></div>
+        <div class="stat"><b>3</b><span>Major Projects</span></div>
+        <div class="stat"><b>7</b><span>Certifications</span></div>
+        <div class="stat"><b>4</b><span>Languages Spoken</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="background:var(--bg-alt);">
+  <div class="eyebrow">Skills</div>
+  <h2 style="margin-top:.6em; font-size:clamp(1.6rem,3vw,2.2rem);">Toolkit</h2>
+  <div class="skill-groups">
+    <div class="skill-card">
+      <h3>AI &amp; ML</h3>
+      <div class="pill-row">
+        <span>Machine Learning</span><span>Deep Learning</span><span>Computer Vision</span><span>Generative AI</span><span>OCR</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Languages &amp; Frameworks</h3>
+      <div class="pill-row">
+        <span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flutter</span><span>FastAPI</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h3>Tools &amp; Libraries</h3>
+      <div class="pill-row">
+        <span>Pandas</span><span>NumPy</span><span>Git</span><span>GitHub</span><span>VS Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="eyebrow">Experience</div>
+  <div class="exp-card">
+    <div class="role">AIML &amp; Generative AI Intern</div>
+    <div class="org">International Institute of Medical Science &amp; Technology Council (IIMSTC), Bangalore</div>
+    <div class="dates">Jan 2026 — May 2026</div>
+    <p>Worked on <strong>SafeStride AI</strong>, an assistive navigation system for visually impaired users, combining object detection and OCR for environment awareness with SOS alerting, built on a Flutter frontend and FastAPI backend.</p>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--bg-alt);">
+  <div class="eyebrow">Projects</div>
+  <h2 style="margin-top:.6em; font-size:clamp(1.6rem,3vw,2.2rem);">Selected Work</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>SafeStride AI</h3>
+      <p>AI-powered navigation assistant for visually impaired users — real-time object detection, OCR for text/signage, and SOS alerts, with a Flutter app and FastAPI backend.</p>
+      <div class="tags"><span>Computer Vision</span><span>OCR</span><span>Flutter</span><span>FastAPI</span></div>
+    </div>
+    <div class="project-card">
+      <h3>Malnutrition Detection</h3>
+      <p>A CNN-based deep learning system that detects signs of malnutrition from input data, paired with a prediction interface for quick screening.</p>
+      <div class="tags"><span>Deep Learning</span><span>CNN</span></div>
+    </div>
+    <div class="project-card">
+      <h3>AgriSiri</h3>
+      <p>An AI agriculture assistant with a bilingual chatbot, plant disease detection, and weather-based recommendations for farmers.</p>
+      <div class="tags"><span>Generative AI</span><span>Computer Vision</span><span>Chatbot</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="eyebrow">Certifications</div>
+  <div class="cert-list">
+    <span>Data Science — Simplilearn</span>
+    <span>Generative AI — Simplilearn</span>
+    <span>Joy of Computing Using Python — NPTEL</span>
+    <span>AI Tools — Outskills</span>
+    <span>DCA</span>
+    <span>Software Testing — 1 Month</span>
+    <span>Cloud Computing Workshop</span>
+  </div>
+</section>
+
+<section id="contact" class="contact-wrap">
+  <div class="eyebrow" style="justify-content:center;">Contact</div>
+  <h2 style="margin-top:.5em;">Let's build something.</h2>
+  <p style="color:var(--ink-dim); max-width:50ch; margin:1rem auto 0;">Open to AI/ML and full-stack opportunities, internships, and collaborations.</p>
+  <div class="contact-links">
+    <a class="btn solid" href="mailto:poojahollaru031@gmail.com">Email Me</a>
+    <a class="btn" href="tel:+918618149266">+91 86181 49266</a>
+    <a class="btn" href="https://linkedin.com/in/pooja-h-1259a4279" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/PoojaH031" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Pooja H. Built with intent, not templates.</footer>
+
+<script>
+  // ---------- Scale-parting portrait effect ----------
+  // Two layers: .scale-base (bottom / "anime" image) + a grid of .tile
+  // divs (top / "real" photo) laid out with a big shared background so
+  // each tile shows the correct slice. On pointer move, tiles near the
+  // cursor push away and fade, revealing the base layer beneath — like
+  // scales parting.
+  //
+  // Base layer (bottom): assets/anime.jpg
+  // Tile layer (top, parts on hover): assets/real.jpg — sliced automatically across the grid.
+
+  const COLS = 14, ROWS = 10;
+  const TILE_IMAGE = 'anime.jpg';
+
+  const grid = document.getElementById('tileGrid');
+  const wrap = document.getElementById('scaleWrap');
+  const tiles = [];
+
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const t = document.createElement('div');
+      t.className = 'tile';
+      if (TILE_IMAGE) {
+        t.style.backgroundImage = `url('${TILE_IMAGE}')`;
+        t.style.backgroundSize = `${COLS * 100}% ${ROWS * 100}%`;
+        t.style.backgroundPosition = `${(c / (COLS - 1)) * 100}% ${(r / (ROWS - 1)) * 100}%`;
+      }
+      grid.appendChild(t);
+      tiles.push({ el: t, r, c });
+    }
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const RADIUS = 150;      // px, how far the ripple reaches
+  const MAX_SHIFT = 34;    // px, how far a tile at the epicenter moves
+  let raf = null;
+
+  function ripple(px, py) {
+    const rect = wrap.getBoundingClientRect();
+    const tw = rect.width / COLS, th = rect.height / ROWS;
+
+    tiles.forEach(({ el, r, c }) => {
+      const cx = (c + 0.5) * tw;
+      const cy = (r + 0.5) * th;
+      const dx = cx - px, dy = cy - py;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist < RADIUS) {
+        const t = 1 - dist / RADIUS;
+        const nx = dx / (dist || 1), ny = dy / (dist || 1);
+        const shiftX = nx * t * MAX_SHIFT;
+        const shiftY = ny * t * MAX_SHIFT;
+        const rot = (c % 2 === 0 ? 1 : -1) * t * 12;
+        el.style.transform = `translate3d(${shiftX}px, ${shiftY}px, 0) rotate(${rot}deg) scale(${1 - t * 0.15})`;
+        el.style.opacity = String(1 - t * 0.7);
+      } else {
+        el.style.transform = 'translate3d(0,0,0) rotate(0deg) scale(1)';
+        el.style.opacity = '1';
+      }
+    });
+  }
+
+  function handleMove(clientX, clientY) {
+    if (reduceMotion) return;
+    const rect = wrap.getBoundingClientRect();
+    const px = clientX - rect.left, py = clientY - rect.top;
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => ripple(px, py));
+  }
+
+  function resetTiles() {
+    tiles.forEach(({ el }) => {
+      el.style.transform = 'translate3d(0,0,0) rotate(0deg) scale(1)';
+      el.style.opacity = '1';
+    });
+  }
+
+  wrap.addEventListener('mousemove', e => handleMove(e.clientX, e.clientY));
+  wrap.addEventListener('mouseleave', resetTiles);
+  wrap.addEventListener('touchmove', e => {
+    const touch = e.touches[0];
+    if (touch) handleMove(touch.clientX, touch.clientY);
+  }, { passive: true });
+  wrap.addEventListener('touchend', resetTiles);
+</script>
+
+</body>
+</html>
