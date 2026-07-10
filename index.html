@@ -158,7 +158,7 @@
   }
   .scale-base{
     position:absolute; inset:0;
-    background-image:url('assets/anime.jpg');
+    background-image:url('real.jpg');
     background-size:cover;
     background-position:center;
   }
@@ -424,12 +424,11 @@
   // each tile shows the correct slice. On pointer move, tiles near the
   // cursor push away and fade, revealing the base layer beneath — like
   // scales parting.
-  //
-  // Base layer (bottom): anime.jpg
+  //  // Base layer (bottom): anime.jpg
   // Tile layer (top, parts on hover): real.jpg — sliced automatically across the grid.
 
   const COLS = 14, ROWS = 10;
-  const TILE_IMAGE = 'real.jpg';
+  const TILE_IMAGE = 'anime.jpg';
 
   const grid = document.getElementById('tileGrid');
   const wrap = document.getElementById('scaleWrap');
