@@ -1,5 +1,5 @@
 # Pooja H — Portfolio
-
+https://pooja-portfolio-ivory.vercel.app/                                                                                                  
 A single-page portfolio site with a signature hero effect: your real photo is sliced into a grid of tiles that sit on top of an anime-style image. Move your cursor across it and the tiles part like scales, revealing the anime layer underneath.
 
 ## Folder structure
@@ -9,10 +9,9 @@ Keep everything exactly like this — the page won't find the images if the stru
 ```
 portfolio/
 ├── index.html
-└── assets/
-    ├── real.jpg          (your real photo)
-    ├── anime.jpg          (anime-style image)
-    └── certificates/       (add certificate images here later)
+├── real.jpg          (your real photo)
+├── anime.jpg          (anime-style image)
+└── certificates/       (add certificate images here later)
 ```
 
 ## How to run it
@@ -40,13 +39,13 @@ Everything is in `index.html` — no build step, no dependencies. Open it in any
 
 ## Adding certificate photos
 
-1. Drop each certificate image into `assets/certificates/`
+1. Drop each certificate image into `certificates/`
 2. Send them to me (or, if you're editing by hand, wrap the relevant `<span>` in `certifications` with an `<a href="assets/certificates/yourfile.jpg" target="_blank">` tag so clicking it opens the image)
 
 ## Changing the hero photos
 
-- Anime layer (bottom): replace `assets/anime.jpg` with a new image of the same filename, or update the path in the CSS under `.scale-base { background-image: ... }`
-- Real photo layer (tiles on top): replace `assets/real.jpg`, or update the `TILE_IMAGE` constant near the bottom of `index.html`, inside the `<script>` tag
+- Anime layer (bottom): replace `anime.jpg` with a new image of the same filename, or update the path in the CSS under `.scale-base { background-image: ... }`
+- Real photo layer (tiles on top): replace `real.jpg`, or update the `TILE_IMAGE` constant near the bottom of `index.html`, inside the `<script>` tag
 
 Both images should be roughly portrait-shaped (3:4) for the tiles to line up cleanly.
 
@@ -54,7 +53,7 @@ Both images should be roughly portrait-shaped (3:4) for the tiles to line up cle
 
 | Platform | Steps |
 |---|---|
-| **GitHub Pages** | Create a repo → upload the whole `portfolio` folder contents → Settings → Pages → set source to `main` branch → live at `yourusername.github.io/reponame` |
+| **GitHub Pages** | Create a repo → upload the whole `portfolio` folder contents → Settings → Pages → set source to `main` branch → live at `(github.com/PoojaH031/pooja-portfolio)` |
 | **Vercel** | Sign in with GitHub → New Project → import the repo → Deploy |
 | **Netlify** | Drag the `portfolio` folder straight into netlify.com/drop → instant live URL |
 
